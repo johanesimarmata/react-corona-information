@@ -48,7 +48,6 @@ class App extends React.Component{
 
     handleButtonIndonesiaDataChange = async () =>{
         if(!this.state.showIndonesiaDaily){
-            console.log('MASUK PAK EKO')
             this.setState({
                 currentPage: await 'Global',
                 showIndonesiaDaily: await false,
