@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
+// const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
 const url = 'https://covid19.mathdro.id/api'
 const urlIndonesia = 'https://data.covid19.go.id/public/api/update.json'
 
