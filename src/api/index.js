@@ -23,7 +23,6 @@ export const fetchData = async (country) => {
 export const fetchDataIndonesia = async (showDaily) => {
     try{
         const { data } = await axios.get(urlIndonesia)
-        console.log(data)
         if(showDaily){
             const modifiedData = {
                 confirmed: data.update.total.jumlah_positif,
