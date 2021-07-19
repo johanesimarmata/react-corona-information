@@ -39,7 +39,7 @@ export const fetchDataIndonesia = async (showDaily) => {
                 recovered: dailyData.sembuh,
                 deaths: dailyData.meninggal,
                 being_treated: dailyData.dirawat,
-                lastUpdate: dailyData.tanggal
+                lastUpdate: new Date(dailyData.tanggal).toDateString()
             }))
             return modifiedData
         }
