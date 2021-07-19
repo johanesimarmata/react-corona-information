@@ -21,7 +21,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                 <CardComponent 
                     className={styles.infected}
                     cardTitle="Infected"
-                    value={showDaily ? '' : data[data.length - 1].confirmed.value}
+                    value={showDaily ? '' : data[data.length - 1].confirmed}
                     lastUpdate={data.lastUpdate}
                     cardSubtitle="Number of active cases from COVID-19."
                     dataIndonesia={true}
@@ -29,7 +29,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                 <CardComponent 
                     className={styles.recovered}
                     cardTitle="Being Treated"
-                    value={showDaily ? '' : data[data.length - 1].being_treated.value}
+                    value={showDaily ? '' : data[data.length - 1].being_treated}
                     lastUpdate={data.lastUpdate}
                     cardSubtitle="Number of being treated in Hospital."
                     dataIndonesia={true}
@@ -37,7 +37,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                 <CardComponent 
                     className={styles.recovered}
                     cardTitle="Recovered"
-                    value={showDaily ? '' : data[data.length - 1].recovered.value}
+                    value={showDaily ? '' : data[data.length - 1].recovered}
                     lastUpdate={data.lastUpdate}
                     cardSubtitle="Number of recoveries from COVID-19."
                     dataIndonesia={true}
@@ -45,7 +45,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                 <CardComponent
                     className={styles.deaths}
                     cardTitle="Deaths"
-                    value={showDaily ? '' : data[data.length - 1].deaths.value}
+                    value={showDaily ? '' : data[data.length - 1].deaths}
                     lastUpdate={data.lastUpdate}
                     cardSubtitle="Number of deaths caused by COVID-19."
                     dataIndonesia={true}

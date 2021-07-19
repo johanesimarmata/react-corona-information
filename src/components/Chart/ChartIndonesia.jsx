@@ -45,18 +45,18 @@ const ChartIndonesia = ({data, showDaily}) => {
                 data = {{
                     labels: dailyData.map(((data) => new Date(data.lastUpdate).toDateString())),
                     datasets: [{
-                        data: dailyData.map((data) => data.confirmed.value),
+                        data: dailyData.map((data) => data.confirmed),
                         label: 'Infected',
                         borderColor: '#3333ff',
                         fill: true
                     }, {
-                        data: dailyData.map((data) => data.deaths.value),
+                        data: dailyData.map((data) => data.deaths),
                         label: 'Deaths',
                         borderColor: 'red',
                         backgroundColor: 'rgba(255, 0, 0, 0.5)',
                         fill: true,
                     },{
-                        data: dailyData.map((data) => data.recovered.value),
+                        data: dailyData.map((data) => data.recovered),
                         label: 'Recovered',
                         borderColor: 'green',
                         backgroundColor: 'rgba(0, 255, 0, 0.5)',
