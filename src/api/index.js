@@ -26,12 +26,12 @@ export const fetchDataIndonesia = async (showDaily) => {
         const { data } = await axios.get(urlIndonesia + 'harian')
         if(showDaily){
             const modifiedData = {
-                confirmed: data.update.total.jumlah_positif,
-                recovered: data.update.total.jumlah_sembuh,
-                deaths: data.update.total.jumlah_meninggal,
-                being_treated: data.update.total.jumlah_dirawat,
+                confirmed: data[data.length - 1].positif,
+                recovered: data[data.length - 1].sembuh,
+                deaths: data[data.length - 1].meninggal,
+                being_treated: data[data.length - 1].dirawat,
+                lastUpdate: data[data.length - 1].tanggal
             }
-            modifiedData.lastUpdate = data.update.penambahan.tanggal
             return modifiedData
         }else{
             const modifiedData = data.map((dailyData) => ({

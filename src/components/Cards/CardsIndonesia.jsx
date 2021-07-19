@@ -4,8 +4,6 @@ import styles from './Cards.module.css'
 import CardComponent from './Card/Card'
 const CardsIndonesia = ({data, showDaily}) => {
     if(!data.length){
-        console.log('DIBAWAH INI ADALAH DATA CARD')
-        console.log(data)
         return 'Loading...'
     }
     return(
@@ -14,7 +12,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                 This Page Shows Indonesia Active Cases
             </Typography>
             <Typography variant="overline" display="block" gutterBottom>
-                Last Updated at {new Date(data.lastUpdate).toDateString()}
+                Last Updated at {new Date(data[data.length - 1].lastUpdate).toDateString()}
             </Typography>
             <br/>
             <Grid container spacing={2} justify="center">
@@ -22,7 +20,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                     className={styles.infected}
                     cardTitle="Infected"
                     value={showDaily ? '' : data[data.length - 1].confirmed}
-                    lastUpdate={data.lastUpdate}
+                    lastUpdate={new Date(data[data.length - 1].lastUpdate).toDateString()}
                     cardSubtitle="Number of active cases from COVID-19."
                     dataIndonesia={true}
                 />
@@ -30,7 +28,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                     className={styles.recovered}
                     cardTitle="Being Treated"
                     value={showDaily ? '' : data[data.length - 1].being_treated}
-                    lastUpdate={data.lastUpdate}
+                    lastUpdate={new Date(data[data.length - 1].lastUpdate).toDateString()}
                     cardSubtitle="Number of being treated in Hospital."
                     dataIndonesia={true}
                 />
@@ -38,7 +36,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                     className={styles.recovered}
                     cardTitle="Recovered"
                     value={showDaily ? '' : data[data.length - 1].recovered}
-                    lastUpdate={data.lastUpdate}
+                    lastUpdate={new Date(data[data.length - 1].lastUpdate).toDateString()}
                     cardSubtitle="Number of recoveries from COVID-19."
                     dataIndonesia={true}
                 />
@@ -46,7 +44,7 @@ const CardsIndonesia = ({data, showDaily}) => {
                     className={styles.deaths}
                     cardTitle="Deaths"
                     value={showDaily ? '' : data[data.length - 1].deaths}
-                    lastUpdate={data.lastUpdate}
+                    lastUpdate={new Date(data[data.length - 1].lastUpdate).toDateString()}
                     cardSubtitle="Number of deaths caused by COVID-19."
                     dataIndonesia={true}
                 />
