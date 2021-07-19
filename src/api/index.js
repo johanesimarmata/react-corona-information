@@ -1,7 +1,8 @@
 import axios from 'axios'
 
-const url = 'https://covid19.mathdro.id/api'
-const urlIndonesia = 'https://data.covid19.go.id/public/api/update.json'
+const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
+const url = corsAnywhere + 'https://covid19.mathdro.id/api'
+const urlIndonesia = corsAnywhere + 'https://data.covid19.go.id/public/api/update.json'
 
 export const fetchData = async (country) => {
 
