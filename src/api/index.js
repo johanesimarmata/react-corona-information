@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
 const url = 'https://covid19.mathdro.id/api'
-const urlIndonesia = 'http://apicovid19indonesia-v2.vercel.app/api/indonesia/'
+const urlIndonesia = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/'
 
 export const fetchData = async (country) => {
 
