@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
-const url = corsAnywhere + 'https://covid19.mathdro.id/api'
-const urlIndonesia = corsAnywhere + 'https://data.covid19.go.id/public/api/update.json'
+const url = 'https://covid19.mathdro.id/api'
+const urlIndonesia = 'https://data.covid19.go.id/public/api/update.json'
 
 export const fetchData = async (country) => {
 
@@ -12,7 +12,7 @@ export const fetchData = async (country) => {
     }
 
     try {
-        const {data : {confirmed, recovered, deaths, lastUpdate}} = await axios.get(changeAbleURL);
+        const {data : {confirmed, recovered, deaths, lastUpdate}} = await axios.get(changeAbleURL, { crossDomain: true });
         return {confirmed, recovered, deaths, lastUpdate}
     } catch (error) {
         return error
@@ -23,7 +23,7 @@ export const fetchData = async (country) => {
 //Daily Data for Indonesia
 export const fetchDataIndonesia = async (showDaily) => {
     try{
-        const { data } = await axios.get(urlIndonesia)
+        const { data } = await axios.get(urlIndonesia, { crossDomain: true })
         if(showDaily){
             const modifiedData = {
                 confirmed: data.update.total.jumlah_positif,
@@ -52,7 +52,7 @@ export const fetchDataIndonesia = async (showDaily) => {
 
 export const fetchCountries = async () => {
     try{
-        const {data : {countries}} = await axios.get(`${url}/countries`)
+        const {data : {countries}} = await axios.get(`${url}/countries`, { crossDomain: true })
         return countries.map((country) => country.name)
     }catch(error){
         console.log(error)
